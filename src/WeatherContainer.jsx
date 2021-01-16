@@ -1,12 +1,14 @@
 import React, { useState } from 'react';
 import Search from './Search';
+import WeatherDisplay from './WeatherDisplay';
 
 const WeatherContainer = () => {
-  const [search, setSearch] = useState('')
+  const [result, setResult] = useState([]);
 
   return (
     <div className="weather-container">
-      <Search search={search} setSearch={setSearch} />
+      <Search result={result} setResult={setResult} />
+      <WeatherDisplay result={result} />
     </div>
   )
 }
