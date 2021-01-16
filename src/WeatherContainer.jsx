@@ -5,6 +5,7 @@ import WeatherDisplay from './WeatherDisplay';
 const WeatherContainer = () => {
   const [result, setResult] = useState([]);
 
+
   return (
     <div className="weather-container">
       <Search result={result} setResult={setResult} />
