@@ -1,4 +1,5 @@
 import React from 'react';
+import './CurrentWeather.scss'
 
 const CurrentWeather = ({ loc, weather }) => (
   <div className="location-info">
