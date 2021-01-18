@@ -1,5 +1,6 @@
 import React, { useState } from 'react';
 import axios from 'axios';
+import './Search.scss';
 
 const API_KEY = ''
 

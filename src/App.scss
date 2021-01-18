@@ -1,5 +1,6 @@
 .App {
   text-align: center;
+  background: linear-gradient(#5c99fa, #ffba70);
 }
 
 .App-logo {
@@ -10,6 +11,7 @@
 @media (prefers-reduced-motion: no-preference) {
   .App-logo {
     animation: App-logo-spin infinite 20s linear;
+    -webkit-animation: App-logo-spin infinite 20s linear;
   }
 }
 
