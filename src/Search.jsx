@@ -26,9 +26,11 @@ const Search = ({result, setResult, setIsCompare, setIsError}) => {
 
   return (
     <div className="search-container">
-      <input type="text" className="searchbar" value={search} onChange={(e) => setSearch(e.target.value)} />
-      <button onClick={() => handleClick(false)}>Search Weather</button>
-      <button onClick={() => handleClick(true)}>Compare Weather</button>
+      <input type="text" className="search-bar" value={search} onChange={(e) => setSearch(e.target.value)} />
+      <div className="button-container">
+        <button className="search-button" onClick={() => handleClick(false)}>Search Weather</button>
+        <button className="compare-button" onClick={() => handleClick(true)}>Compare Weather</button>
+      </div>
     </div>
   )
 }
