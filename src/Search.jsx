@@ -19,6 +19,7 @@ const Search = ({result, setResult, setIsCompare, setIsError}) => {
         isCompare ? setResult(result.concat([data.data])) : setResult([].concat([data.data]))
       }
     } catch (err) {
+      setIsError(true)
       console.log(err)
     }
     setSearch('')
