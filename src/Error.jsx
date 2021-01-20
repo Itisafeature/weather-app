@@ -1,9 +1,9 @@
 import React from 'react';
 import './Error.scss';
 
-const Error = () => (
+const Error = ({errorMessage}) => (
   <div className="error">
-    <h1>Uh Oh! Error!</h1>
+    <h1>{errorMessage}</h1>
   </div>
 )
 

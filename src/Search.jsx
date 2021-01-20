@@ -1,26 +1,25 @@
 import React, { useState } from 'react';
 import axios from 'axios';
+import { errorHelper } from './helpers.js';
 import './Search.scss';
 
 const API_KEY = ''
 
-const Search = ({result, setResult, setIsCompare, setIsError}) => {
+const Search = ({result, setResult, setIsCompare, setIsError, setErrorMessage}) => {
   const [search, setSearch] = useState('');
 
   const handleClick = async (isCompare) => {
+    if (isCompare && result.length === 0) {
+      return null;
+    }
     try {
       const data = await axios.get(`http://api.weatherapi.com/v1/current.json?key=${API_KEY}&q=${search}`)
-      if (isCompare && result.length === 0) {
-        setIsError(true);
-        return null;
-      }
      if (!result.some(el => el.location.name === data.data.location.name && el.location.region === data.data.location.region)) {
         setIsCompare(isCompare);
         isCompare ? setResult(result.concat([data.data])) : setResult([].concat([data.data]))
       }
     } catch (err) {
-      setIsError(true)
-      console.log(err)
+      errorHelper(err, setIsError, setErrorMessage)
     }
     setSearch('')
   }
