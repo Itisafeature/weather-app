@@ -3,23 +3,20 @@ import './CurrentWeather.scss'
 
 const CurrentWeather = ({ loc, weather }) => (
   <div className="location-info">
-    <h3 className="location-name">{loc.name}</h3>
+    <h2 className="location-name">{loc.name}</h2>
     <div className="tempature">
-      <h5>Tempature</h5>
-      <ul>
-        <li>Humidity: {weather.humidity}</li>
+      <h3>Tempature</h3>
+        Humidity: {weather.humidity}
         <div className="farenheit">
-          Farenheit
-          <li>{weather.temp_f}</li>
-          <li>Feels Like: {weather.feelslike_f}</li>
+          <h4>Farenheit:</h4>
+          <span>{weather.temp_f}</span>
+          <span>Feels Like: {weather.feelslike_f}</span>
         </div>
         <div className="celcius">
-          Celcius
-          <li>{weather.temp_c}</li>
-          <li>Feels Like: {weather.feelslike_c}</li>
+          Celcius {weather.temp_c}
+          Feels Like: {weather.feelslike_c}
         </div>
-      </ul>
-    </div>
+      </div>
     <div className="wind">
       <h5>Wind</h5>
       <ul>
