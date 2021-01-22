@@ -3,8 +3,6 @@ import Header from './Header'
 import Error from './Error';
 import Search from './Search';
 import WeatherDisplay from './WeatherDisplay';
-import { findLocation } from './helpers'
-
 
 const AppContainer = () => {
   const [result, setResult] = useState([]);
@@ -14,7 +12,7 @@ const AppContainer = () => {
   const [isSuccess, setIsSuccess] = useState(false);
 
   const handleRemoveLocation = (e, loc) => {
-    setResult(result.filter(el => !findLocation(loc, result)))
+    setResult(result.filter(el => el.location.name !== loc.name || el.location.region !== loc.region))
   }
 
   return (
