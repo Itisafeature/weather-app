@@ -1,6 +1,10 @@
 export const errorHelper = (err, setIsError, setErrorMessage, setIsSuccess) => {
   setIsError(true);
   setIsSuccess(false);
+  if (typeof err === 'string') {
+    setErrorMessage(err);
+    return null;
+  }
   switch (err.response.status) {
     case 400:
       setErrorMessage(
