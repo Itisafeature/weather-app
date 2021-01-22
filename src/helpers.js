@@ -19,3 +19,9 @@ export const errorHelper = (err, setIsError, setErrorMessage, setIsSuccess) => {
       break;
   }
 };
+
+export const findLocation = (loc, result) => {
+  return result.find(
+    el => el.location.name === loc.name && el.location.region === loc.region
+  );
+};
