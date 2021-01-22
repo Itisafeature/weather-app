@@ -13,6 +13,11 @@ const Search = ({result, setResult, setIsCompare, setIsError, setErrorMessage, s
       errorHelper("Please search for a city before comparing!", setIsError, setErrorMessage, setIsSuccess)
       return null;
     }
+
+    if (result.length > 9) {
+      errorHelper("Please remove a city first", setIsError, setErrorMessage, setIsSuccess)
+    }
+
     try {
       const data = await axios.get(`http://api.weatherapi.com/v1/current.json?key=${API_KEY}&q=${search}`)
      if (!result.some(el => el.location.name === data.data.location.name && el.location.region === data.data.location.region)) {
